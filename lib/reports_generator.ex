@@ -35,7 +35,7 @@ defmodule ReportsGenerator do
   end
 
   defp report_acc do
-    foods = Enum.into(@avaliable_foods, %{}, &{Integer.to_string(&1), 0})
+    foods = Enum.into(@avaliable_foods, %{}, &{&1, 0})
     users = Enum.into(1..30, %{}, &{Integer.to_string(&1), 0})
 
     %{"foods" => foods, "users" => users}
